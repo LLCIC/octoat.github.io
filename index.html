@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="吴君涵 – 三维动画师与包装设计师作品集。展示酒类、护肤品包装动画与后期制作案例，2年经验，擅长C4D、Blender、AE。用视觉故事提升品牌价值。">
+    <meta name="keywords" content="三维动画师,包装设计,后期制作,C4D,Blender,作品集,吴君涵,产品效果图,短视频剪辑">
+    <meta name="author" content="吴君涵">
+    <title>吴君涵 | 三维动画师 & 包装设计作品集</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background-color: #fefefe;
+            color: #1a1a1a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 导航栏 */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1e2b3c, #2c4e6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e2f;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+
+        /* 按钮通用样式 */
+        .btn {
+            display: inline-block;
+            background-color: #2c4e6b;
+            color: white;
+            padding: 0.7rem 1.6rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #2c4e6b;
+            color: #2c4e6b;
+        }
+
+        .btn-outline:hover {
+            background: #2c4e6b;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: #e67e22;
+            border-radius: 3px;
+        }
+
+        /* 英雄区 */
+        .hero {
+            padding: 4rem 0 3rem;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-width: 700px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        .hero-highlight {
+            color: #e67e22;
+        }
+        .hero-sub {
+            font-size: 1.3rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin: 0.5rem 0;
+        }
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        /* 技能亮点卡片 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .skill-card {
+            background: #f8f9fa;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            border-radius: 24px;
+            transition: all 0.2s;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .skill-card i {
+            font-size: 2rem;
+            color: #2c4e6b;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* 关于区域双栏 */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+        .philosophy-box {
+            background: #f2f5f4;
+            padding: 1.5rem;
+            border-radius: 28px;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-left: 5px solid #e67e22;
+        }
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .step {
+            background: white;
+            border-radius: 60px;
+            padding: 0.4rem 1rem;
+            border: 1px solid #ddd;
+            font-size: 0.85rem;
+        }
+
+        /* 项目卡片 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+        .project-img {
+            background: #e2e8f0;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        .project-content {
+            padding: 1.5rem;
+        }
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .project-role {
+            font-size: 0.85rem;
+            color: #e67e22;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .project-metrics {
+            background: #f8f9fa;
+            padding: 0.5rem 0.8rem;
+            border-radius: 16px;
+            margin: 0.8rem 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .case-link {
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 600;
+            color: #2c4e6b;
+            text-decoration: none;
+        }
+
+        /* 联系区域 */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+        .contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            background: #edf2f7;
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #2c4e6b;
+            transition: 0.2s;
+            font-size: 1.3rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 24px;
+            font-family: inherit;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid, .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            section {
+                padding: 3rem 0;
+            }
+        }
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">吴君涵 · 三维视觉</div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 首页 Hero 区 -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>让包装与画面<br><span class="hero-highlight">说话</span> —— 我用三维动画与后期设计，帮品牌讲好视觉故事。</h1>
+                    <div class="hero-sub">三维动画师 | 包装设计师 | 后期制作</div>
+                    <div class="hero-desc">你好！我是吴君涵，2年经验的后期与包装设计师。擅长从平面到三维、从拍摄到剪辑的全流程制作。曾为“昆仑好客”等品牌设计包装动画，致力于用视觉语言提升产品吸引力。</div>
+                    <div class="cta-group">
+                        <a href="#projects" class="btn">查看作品 <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-outline">联系我</a>
+                        <a href="#" class="btn btn-outline" onclick="alert('简历PDF模拟下载，实际可上传文件。'); return false;"><i class="fas fa-download"></i> 下载简历</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心技能亮点 -->
+        <section style="padding-top: 0;">
+            <div class="container">
+                <h2 class="section-title">核心专长</h2>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fas fa-cube"></i> C4D / Blender</div>
+                    <div class="skill-card"><i class="fas fa-paintbrush"></i> PS / AI 平面设计</div>
+                    <div class="skill-card"><i class="fas fa-film"></i> AE 动效 / 合成</div>
+                    <div class="skill-card"><i class="fas fa-video"></i> 短视频拍摄/剪辑</div>
+                    <div class="skill-card"><i class="fas fa-box-open"></i> 包装效果图/动画</div>
+                    <div class="skill-card"><i class="fas fa-robot"></i> Stable Diffusion 辅助创作</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我 -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">关于我</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>🎓 毕业于广州城建职业学院（新媒体与互联网应用）及广东南华工商职业学院（数字媒体技术）。从商业摄影到三维动画，我一直在探索如何用视觉内容打动观众。比起炫技，我更关心设计能否让产品被记住。</p>
+                        <div class="philosophy-box">
+                            💡 <strong>设计理念</strong><br>
+                            “每一个包装都应该在货架上自己讲故事。” 我相信好的后期设计不是堆砌特效，而是用合适的节奏、材质与光影传递品牌的真实温度。
+                        </div>
+                        <p>🔥 <strong>驱动我的动力</strong><br>我痴迷于“如何让静止的包装动起来”以及“如何让30秒的短视频抓住人心”。每当客户说“这个效果超出预期”，就是我最满足的时刻。</p>
+                        <p>⚡ <strong>趣味事实</strong><br>每天必须喝一杯手冲咖啡才开始调材质；业余喜欢拍城市延时摄影；曾经为了一个酒瓶的反光效果，连熬三个测试版本。</p>
+                    </div>
+                    <div>
+                        <p><strong>📋 流程与方法</strong></p>
+                        <div class="process-steps">
+                            <span class="step">1. 理解 (产品定位/受众)</span>
+                            <span class="step">2. 构思 (分镜/风格)</span>
+                            <span class="step">3. 制作 (建模/动画/剪辑)</span>
+                            <span class="step">4. 反馈 (客户修改)</span>
+                            <span class="step">5. 输出 (渲染/交付)</span>
+                        </div>
+                        <p><strong>💼 职业背景</strong><br>
+                        • 深圳市源起点包装设计有限公司 — 包装平面设计 & 三维效果图/动画制作 (2024)<br>
+                        • 广州宏安企业管理有限公司 — 现场执行与流程协作，强化项目落地能力 (2025)<br>
+                        • 参与“昆仑好客”酒样包装设计，独立完成视觉整合与三维展示动画<br>
+                        • 学习与适应能力强，具备良好沟通及团队协作精神，乐于挑战新技术。
+                        </p>
+                        <p><strong>📌 教育</strong><br>广州城建职业学院 (新媒体与互联网应用) 2021-2024<br>广东南华工商职业学院 (数字媒体技术) 2024-2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目作品 -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">精选项目</h2>
+                <div class="projects-grid">
+                    <!-- 项目1: 昆仑好客酒样包装设计 -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-wine-bottle" style="font-size: 3rem; margin-right: 8px;"></i> 昆仑好客 · 酒样包装
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title">昆仑好客酒样包装设计</div>
+                            <div class="project-role">角色：独立视觉 & 三维动画师</div>
+                            <p>为高端酒样系列设计包装视觉并制作三维展示动画，用于电商主图与线下订货会。从元素整合到旋转动画全流程负责。</p>
+                            <div class="project-metrics">
+                                📈 成就：设计方案一次性通过客户验收；订货会中产品咨询量提升约30%（客户反馈）。
+                            </div>
+                            <a href="#" class="case-link" onclick="alert('完整案例研究：包含用户调研、材质迭代与分镜草图。可联系获取PDF。'); return false;">查看完整案例研究 →</a>
+                        </div>
+                    </div>
+
+                    <!-- 项目2: 国风护肤品开盒动画 (虚构但基于技能) -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-flask" style="font-size: 3rem;"></i> 植屿 · 开盒动画
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title">植屿国风护肤品 · 开盒动画</div>
+                            <div class="project-role">角色：C4D建模/动画/后期合成</div>
+                            <p>为一款主打东方草本的面霜制作15秒包装开盒动画，突出瓷器质感与仪式感，用于抖音/小红书宣传。</p>
+                            <div class="project-metrics">
+                                🎬 成果：动画播放量2.3w，品牌方表示互动率提升18%，并用于主页置顶。
+                            </div>
+                            <a href="#" class="case-link" onclick="alert('完整案例含分镜设计、材质测试与用户反馈数据。'); return false;">查看完整案例研究 →</a>
+                        </div>
+                    </div>
+
+                    <!-- 项目3: 短视频/产品宣传片 (体现剪辑能力) -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <i class="fas fa-video" style="font-size: 3rem;"></i> 创意饮品 · 产品短视频
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title">轻汽泡饮 · 15秒种草视频</div>
+                            <div class="project-role">角色：拍摄/剪辑/调色</div>
+                            <p>负责从脚本到成片的短视频制作，结合三维包装素材与实拍，突出夏日清爽感。</p>
+                            <div class="project-metrics">
+                                📱 数据：发布后3天自然曝光量1.2w，转化点击率较往期提高22%。
+                            </div>
+                            <a href="#" class="case-link" onclick="alert('案例包含剪辑逻辑、节奏设计及后台数据。'); return false;">查看完整案例研究 →</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#contact" class="btn btn-outline">更多作品？ 欢迎联系 →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系页面 -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">联系 · 合作</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> 邮箱：3459129627@qq.com</p>
+                        <p><i class="fas fa-phone-alt"></i> 电话：138 2768 1323</p>
+                        <p><i class="fas fa-comment-dots"></i> 首选沟通方式：邮件或微信（项目合作请邮件联系，我会及时回复）</p>
+                        <p><i class="fas fa-clock"></i> 预期回复时间：1个工作日内（通常12小时）</p>
+                        <p><i class="fas fa-briefcase"></i> 目前开放后期制作/三维动画/包装设计全职岗位（期望8-10K），也接受远程项目合作。</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="站酷" title="站酷作品集"><i class="fab fa-bezier-curve"></i></a>
+                            <a href="#" aria-label="B站" title="B站个人空间"><i class="fab fa-bilibili"></i></a>
+                            <a href="#" aria-label="小红书" title="小红书"><i class="fab fa-xiaohongshu"></i></a>
+                            <a href="#" aria-label="领英" title="领英"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="作品集邮箱"><i class="fas fa-palette"></i></a>
+                        </div>
+                        <div class="badge-list">
+                            <span class="step">🌟 开放合作</span>
+                            <span class="step">📄 作品集PDF可索</span>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form action="#" method="post" onsubmit="alert('感谢留言！我会尽快通过邮箱回复您。'); return false;">
+                            <input type="text" placeholder="姓名 / 公司" required>
+                            <input type="email" placeholder="电子邮箱" required>
+                            <textarea rows="3" placeholder="项目需求或合作意向..."></textarea>
+                            <button type="submit" class="btn" style="width: 100%;">发送消息 <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                        <p style="font-size: 0.8rem; margin-top: 0.8rem;">或直接邮箱联系，24h内必复</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 吴君涵 — 三维动画与包装设计作品集 | 用视觉驱动商业价值</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="#home" style="color: #2c4e6b; text-decoration: none;">回到顶部</a>
+        </p>
+    </footer>
+
+    <!-- 平滑滚动与简单交互 -->
+    <script>
+        document.querySelectorAll('.nav-links a, .btn[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if(targetId && targetId !== '#' && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(targetId);
+                    if(target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
